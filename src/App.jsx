@@ -1,14 +1,20 @@
-import './App.css'
-import Greeting from './Greeting'
+function List(props) {
+  return (
+    <ul>
+      {props.animals.map((animal) => {
+        return animal.startsWith("L") && <li key={animal}>{animal}</li>
+      })}
+    </ul>
+  );
+}
+
 
 function App() {
-
+  const animals = ['Lion', 'Bear', 'Giraffe', 'Donkey']
   return (
     <>
-      <p>
-        Hello World
-      </p>
-      <Greeting />
+     <h1>Animals:</h1>
+      <List animals={animals}></List>
     </>
   )
 }
