@@ -1,22 +1,24 @@
-function List(props) {
-  return (
-    <ul>
-      {props.animals.map((animal) => {
-        return animal.startsWith("L") && <li key={animal}>{animal}</li>
-      })}
-    </ul>
-  );
-}
+import { Link } from "react-router-dom";
 
 
-function App() {
-  const animals = ['Lion', 'Bear', 'Giraffe', 'Donkey']
+const App = () => {
   return (
     <>
-     <h1>Animals:</h1>
-      <List animals={animals}></List>
+      <div>
+        <h1>Hello from the main page of the app!</h1>
+        <p>Here are some examples of links to other pages</p>
+        <nav>
+          <ul>
+            <li>
+              <Link to='profile'>Profile</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      
     </>
-  )
-}
+    
+  );
+};
 
-export default App
+export default App;
